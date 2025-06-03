@@ -76,13 +76,13 @@ export default defineComponent({
     const { cancelAction }: any = toRefs(props);
     /**
      * Biến chứa element nút bấm 
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const elmAgree: any = ref(null);
 
     /**
      * Khi mounted thì sẽ focus vào một nút chỉ định
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onMounted(() => {
       elmAgree.value.focus();
@@ -107,7 +107,7 @@ export default defineComponent({
     // }
     /**
      * Hàm xử lý đóng
-     * Khắc Tiềm 19.09.2022
+     * TVTHAI 19.09.2022
      */
     const handleEventKey = function (event: any) {
       if (event.keyCode === KeyCode.Esc) {

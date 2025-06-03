@@ -66,7 +66,7 @@ import { onBeforeMount, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 /**
  * Khai báo các api của module
- * Khắc Tiềm 13-03-2023
+ * TVTHAI 13-03-2023
  */
  const api:EmployeeApi = new EmployeeApi();
 
@@ -106,7 +106,7 @@ function handleLogin(){
 
 	/** 
  * Hàm validate input
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 function validateInput() {
   return [

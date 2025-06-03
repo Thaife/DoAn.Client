@@ -9,7 +9,7 @@ export default class CartApi extends BaseApi {
   /**
    * API lấy chi tiết bản ghi theo id
    * @returns Chi tiết bản ghi
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public updateCart = (form: any) => {
     return axiosAPI.get(`/Carts/UpdateCart?v_CurrentUser=${form.v_CurrentUser}&v_ProductID=${form.v_ProductID}&v_State=${form.v_State}`);
@@ -17,7 +17,7 @@ export default class CartApi extends BaseApi {
 
   /**
    * API lấy ra đơn đặt hàng 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public getOrderUser = (form: any) => {
     return axiosAPI.get(`/Carts/GetOrderUser?v_CurrentUser=${form.v_CurrentUser}`);
@@ -25,7 +25,7 @@ export default class CartApi extends BaseApi {
 
   /**
    * API lấy ra đơn đặt hàng 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public getOrderByID = (form: any) => {
     return axiosAPI.get(`/Carts/GetOrderByID?v_OrderID=${form.v_OrderID}`);
@@ -33,7 +33,7 @@ export default class CartApi extends BaseApi {
 
   /**
    * API lấy ra vị trí ship
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public getAddress = (form: any) => {
     return axiosAPI.get(`/Carts/GetAddress?v_Address=${form.v_Address}&v_ID=${form.v_ID}`);
@@ -41,7 +41,7 @@ export default class CartApi extends BaseApi {
 
   /**
    * API lấy ra vị trí ship
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public addStatusOrder = (form: any) => {
     return axiosAPI.get(`/Carts/AddStatusOrder?orderID=${form.orderID}&comment=${form.comment}`);
@@ -49,7 +49,7 @@ export default class CartApi extends BaseApi {
 
   /**
    * API lấy ra vị trí ship
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public getStatusOrder = (form: any) => {
     return axiosAPI.get(`/Carts/GetStatusOrder?v_OrderID=${form.v_OrderID}`);

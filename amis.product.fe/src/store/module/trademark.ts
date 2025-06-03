@@ -4,7 +4,7 @@ import { trademark } from './column-module/index'
 
 /**
  * Các mutation
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 let mutations: any = {
   
@@ -12,7 +12,7 @@ let mutations: any = {
 
 /**
  * Các action
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 let actions: any = {
 	
@@ -20,7 +20,7 @@ let actions: any = {
 
 /**
  * Các action thao tác với table
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const actionTable: InfoTable = {
   actionDefault: ActionTable.Edit,
@@ -32,7 +32,7 @@ const actionTable: InfoTable = {
 
 /**
  * Khai báo store với việc khởi tạo store viết base với các action, mutation được xây dựng trước đó
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const trademarks: BaseStore = new BaseStore(ModuleName.Trademark, trademark, mutations, actions, actionTable);
 

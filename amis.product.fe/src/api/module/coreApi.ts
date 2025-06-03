@@ -3,7 +3,7 @@ export default class CoreApi{
   /**
    * API lưu hình ảnh
    * @returns đường dẫn file
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public static uploadImage = (file: any) => {
     const formData = new FormData();

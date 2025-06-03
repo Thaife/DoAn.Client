@@ -1,6 +1,6 @@
 /**
  * Kiểu dữ liệu backend trả về 
- * Khắc Tiềm 09.03.2023
+ * TVTHAI 09.03.2023
  */
 export class ServiceResponse {
   /** Thành công hay thất bại */

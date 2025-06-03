@@ -47,7 +47,7 @@ import { Employee, EntitySystem, StorageService } from "@/core/public_api";
 
 /**
  * Biến store vuex
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
 const store: any = useStore();
 
@@ -61,20 +61,20 @@ onBeforeMount(() => {
 
 /**
  * Lấy ra trạng thái show sidebar
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
 const isShowSettingLineClamp: any = ref(false);
 const isShowFormChangePassword: any = ref(false);
 
 /**
  * Lấy ra trạng thái show sidebar
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
  const showSidebar: any = computed(() => store.state.config.showSidebar);
 
 /**
  * Hàm sử lý sự kiện toggle sidebar
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
 async function handleToggleSidebar() {
   await store.dispatch("config/setToggleShowSidebarAction");
@@ -88,7 +88,7 @@ async function Logout(){
 
 /**
  * Hàm sử lý show hoặc đóng setting table
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
 function handleToggleSettingLineClamp(){
   isShowSettingLineClamp.value = !isShowSettingLineClamp.value;

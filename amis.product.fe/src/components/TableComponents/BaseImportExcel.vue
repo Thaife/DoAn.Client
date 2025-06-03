@@ -52,7 +52,7 @@ const { t } = useI18n();
 
 /**
  * Props truyền vào với những Base từ bên component cha
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const props = defineProps({
   Base: { type: Grid, required: true },
@@ -60,13 +60,13 @@ const props = defineProps({
 
 /**
  * Trạng thái kéo thả
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const isDragOver = ref(false)
 
 /**
  * Trạng thái đang kéo
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const onDragOver = (event: DragEvent) => {
   event.preventDefault()
@@ -75,7 +75,7 @@ const onDragOver = (event: DragEvent) => {
 
 /**
  * Trạng thái thả
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const onDragLeave = () => {
   isDragOver.value = false
@@ -83,7 +83,7 @@ const onDragLeave = () => {
 
 /**
  * Thả nhận file
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const onDrop = (event: DragEvent) => {
   event.preventDefault()
@@ -119,7 +119,7 @@ const closeFormExcel = () => {
 
 /**
  * Hàm xử lý đóng
- * Khắc Tiềm 19.09.2022
+ * TVTHAI 19.09.2022
  */
 const handleEventKey = function (event: any) {
   props.Base.handleEventFormCtrlShiftS(event, closeFormExcel, null, ()=> {}, null, props.Base.uploadExcel, null)
@@ -135,7 +135,7 @@ const handleEventKey = function (event: any) {
 
 /** 
  * Khi Mounted thì bắt đầu lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
  onMounted(() => {
 	focusLoop.value.addEventListener("focus", handleLoopFocus);
@@ -148,7 +148,7 @@ const handleEventKey = function (event: any) {
 
 /** 
  * Khi UnMounted thì bắt đầu huỷ lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onUnmounted(() =>{
 	window.removeEventListener("focus", handleLoopFocus);

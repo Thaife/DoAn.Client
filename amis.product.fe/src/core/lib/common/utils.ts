@@ -5,7 +5,7 @@ import { computed, ref } from "vue";
 
 /**
  * Chứa các hàm base đã xây dựng
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class Utils extends UtilsComponents{
   /** Store vuex */
@@ -347,7 +347,7 @@ export class Utils extends UtilsComponents{
 
   /**
    * Hàm mở download file từ url
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public downloadFromUrl = (url: any) => {
     window.open(url,);
@@ -355,7 +355,7 @@ export class Utils extends UtilsComponents{
 
   /**
    * Hàm chuyển chữ cái đầu thành chữ thường
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public lowercaseFirstLetter = (str: string): string => {
     return str.charAt(0).toLowerCase() + str.slice(1);
@@ -363,7 +363,7 @@ export class Utils extends UtilsComponents{
 
   /** 
    * Hàm thực hiện set dữ liệu excel sau khi import 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
   */
   public setResultExcel = (data: any = {
     listFail: [],
@@ -374,7 +374,7 @@ export class Utils extends UtilsComponents{
 
   /** 
    * Hàm thực hiện tính kích thước file
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
   */
   public calcFile = (fileSize: any) => {
     if (fileSize < 1024) { // nếu dung lượng < 1KB
@@ -388,7 +388,7 @@ export class Utils extends UtilsComponents{
 
   /**
    * Xoá file excel đã chọn
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public removeFileExcel = () => {
     this.fileExcel.value = null;
@@ -401,7 +401,7 @@ export class Utils extends UtilsComponents{
 
   /**
    * Hàm set kích thước file tối đa có thể nhận từ excel
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public setFileSizeMax = (value: number) => {
     this.fileSizeMax.value = value;

@@ -35,7 +35,7 @@ export default defineComponent({
   computed: {
     /**
      * Khi check thì sẽ cập nhật giá trị model
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     isChecked() {
       return this.modelValue == this.value;

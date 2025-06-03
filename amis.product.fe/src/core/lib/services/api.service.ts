@@ -1,6 +1,6 @@
 /**
  * Chứa các Api service
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 import { useStore } from "vuex";
 import i18n from '@/locales/i18n';

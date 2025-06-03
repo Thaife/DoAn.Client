@@ -2,7 +2,7 @@ import { SystemConstants } from "../common/system.constants";
 
 /**
  * Chứa các hàm thao tác với localstorage
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class StorageService {
 	/** Giá trị item */

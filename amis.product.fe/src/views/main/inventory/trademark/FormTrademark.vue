@@ -85,7 +85,7 @@ const { t } = useI18n();
 
 /**
  * Props truyền vào với những Base từ bên component cha
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const props = defineProps({
   Base: { type: Grid, required: true },
@@ -99,20 +99,20 @@ const props = defineProps({
 const isValid = ref(false);
 
 /** Biến lưu trạng thái gọi api có bị lỗi hay không
- *  Khắc Tiềm - 08.03.2023
+ *  TVTHAI - 08.03.2023
  */
 const errorApi = ref(false);
 
 /**
  * Khởi tạo đối tượng thêm sửa xoá và so sánh
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const trademark = ref<Trademark>(new Trademark());
 const trademarkComparison = ref<Trademark>(new Trademark());
 
 /** 
  * Chuẩn bị dữ liệu trước khi mount
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onBeforeMount(() => {
   if(props.Base.StateForm === ActionTable.Edit || props.Base.StateForm === ActionTable.Replication){
@@ -123,7 +123,7 @@ onBeforeMount(() => {
 
 /** 
  * Hàm xử lý lưu dữ liệu
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 async function handleSaveData(closeModal: any) {
   try {
@@ -163,7 +163,7 @@ async function handleSaveData(closeModal: any) {
 
 /** 
  * Hàm xử lý gọi api của một form thêm, sửa xoá
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const callApiForm = async (api: any, stateForm: string = '') => {
   errorApi.value = true;
@@ -185,7 +185,7 @@ const callApiForm = async (api: any, stateForm: string = '') => {
 
 /** 
  * Hàm validate input
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 function validateInput() {
   return [
@@ -260,7 +260,7 @@ function handleKey(event: any){
 
 /** 
  * Khi Mounted thì bắt đầu lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onMounted(() => {
 	focusLoop.value.addEventListener("focus", handleLoopFocus);
@@ -270,7 +270,7 @@ onMounted(() => {
 
 /** 
  * Khi UnMounted thì bắt đầu huỷ lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onUnmounted(() =>{
 	window.removeEventListener("focus", handleLoopFocus);

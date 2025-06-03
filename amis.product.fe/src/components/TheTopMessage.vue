@@ -29,31 +29,31 @@ export default defineComponent({
 
     /**
      * Sử dụng store của vuex
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const store: any = useStore();
 
     /**
      * Thông báo truyền từ props
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const { notification }: any = toRefs(props);
 
     /**
      * Set timeout tự động tắt thông báo
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const timeout: any = ref (null);
 
     /**
      * set hiệu ứng animation
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const animation: any = ref(false);
 
     /**
      * set class loại thông báo
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const typeClass: any = computed(()=>{
       return `alert-${notification.value.type}`;
@@ -61,7 +61,7 @@ export default defineComponent({
 
     /**
      * Thông báo binding lên
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const notificationScreen = computed(()=>{
       if(Array.isArray(notification.value.message)){
@@ -84,7 +84,7 @@ export default defineComponent({
 
     /**
      * khi mounted thì sẽ kích hoạt hiệu ứng
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onMounted(()=>{
       setTimeout(()=>{        
@@ -94,7 +94,7 @@ export default defineComponent({
 
     /**
      * trước khi mounted thì sẽ set thời gian tự tắt thông báo
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onBeforeMount(()=> {
         timeout.value = setTimeout(() => {
@@ -104,7 +104,7 @@ export default defineComponent({
 
     /**
      * Hàm xử lý tắt thông báo
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleCloseNotification(){
       store.dispatch("config/removeNotification", notification.value);
@@ -112,7 +112,7 @@ export default defineComponent({
 
     /**
      * khi tắt thông báo thì sẽ remove hết setTimeOut
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onBeforeUnmount(()=> {
       clearTimeout(timeout.value);

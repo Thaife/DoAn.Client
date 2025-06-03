@@ -2,7 +2,7 @@ import { Filter, Header } from "@/core/public_api";
 
 /**
  * Base Store với action, mutation được xây dựng sẵn
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export default class BaseStore {
   /** Thông tin module */
@@ -22,7 +22,7 @@ export default class BaseStore {
 
   /**
    * Hàm custom tham số filter nhận được từ api
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public SetRecordList?: Function = undefined;
 
@@ -51,37 +51,37 @@ export default class BaseStore {
         return {
           /**
            * Các hành động của table
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           actionTable: this.ActionTable,
     
           /**
            * Các column của table
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           columns: this.Columns,
     
           /**
            * Các Danh sách
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           recordList: [],
     
           /**
            * Danh sách các record được check
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           recordCheck: [],
     
           /**
            * Tổng số lượng bản ghi
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           totalCount: 0,
     
           /**
            * Mặc định tìm kiếm và phân trang với key hiện tại
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
           filter: new Filter(),
         };
@@ -89,7 +89,7 @@ export default class BaseStore {
       mutations: {
         /**
          * Set Column
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setColumnMutation(state: any, payload: any){
           state.columns = payload;
@@ -98,7 +98,7 @@ export default class BaseStore {
         /**
          * Set danh sách bản ghi
          * @param {danh sách} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setRecordListMutation: (state: any, payload: any) => {
           state.recordList = [...payload.recordList];
@@ -111,7 +111,7 @@ export default class BaseStore {
         /**
          * Xét toggle checkbox phần tử được check
          * @param {index các nhân viên được toggle} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setCheckboxRecordMutation(state: any, payload: any) {
           if(state.recordCheck.includes(payload)){
@@ -124,7 +124,7 @@ export default class BaseStore {
 
         /**
          * Xét toggle tất cả checkbox được check
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setAllCheckboxRecordMutation(state: any, payload: any) {
           let countCheck = 0;
@@ -151,7 +151,7 @@ export default class BaseStore {
 
         /**
          * Xét xoá tất cả checkbox được check
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setEmptyCheckBoxRecordMutation(state: any){
           state.recordList = state.recordList.filter((item: any) => !state.recordCheck.includes(item[state.actionTable.fieldId]));
@@ -162,7 +162,7 @@ export default class BaseStore {
         /**
          * Set các giá trị tìm kiếm và phân trang khi call apie
          * @param {giá trị set} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setFilterMutation(state: any, payload: any) {
           state.filter.v_Offset = payload.v_Offset === 0 || payload.v_Offset ? payload.v_Offset : state.filter.v_Offset;
@@ -201,7 +201,7 @@ export default class BaseStore {
         /**
          * Xét xoá checkbox phần tử được check
          * @param {index các nhân viên được toggle} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setCheckboxUnCheckRecordMutation(state: any, payload: any) {
           if(state.recordCheck.includes(payload)){
@@ -213,7 +213,7 @@ export default class BaseStore {
         
         /**
          * Thêm record
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         addRecordMutation(state: any, payload: any) {
           state.recordList = [payload, ...state.recordList];
@@ -222,7 +222,7 @@ export default class BaseStore {
 
         /**
          * Sửa record
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         editRecordMutation(state: any, payload: any) {
           state.recordList = [payload, ...state.recordList.filter((item: any) => item[state.actionTable.fieldId] !== payload[state.actionTable.fieldId])]
@@ -230,7 +230,7 @@ export default class BaseStore {
 
         /**
            * Hàm xử lý toggle active record
-           * Khắc Tiềm - 08.03.2023
+           * TVTHAI - 08.03.2023
            */
         setToggleActiveMutation(state: any, payload: any){
           state.recordList.find((item: any, index: any) => {
@@ -255,7 +255,7 @@ export default class BaseStore {
       actions: {
         /**
          * Set Column
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setColumnAction(context: any, payload: any){
           context.commit("setColumnMutation", payload);
@@ -283,14 +283,14 @@ export default class BaseStore {
         },
         /**
          * Hàm xử lý toggle active record
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setToggleActiveAction(context: any, payload: any){
           context.commit("setToggleActiveMutation", payload);
         },
         /**
          * Thêm record
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         addRecordAction(context: any, payload: any){
           context.commit("addRecordMutation", payload);
@@ -298,7 +298,7 @@ export default class BaseStore {
 
         /**
          * Sửa record
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         editRecordAction(context: any, payload: any){
           context.commit("editRecordMutation", payload);
@@ -307,7 +307,7 @@ export default class BaseStore {
         /**
          * Lấy ra dánh sách nhân viên
          * @param {Giá trị set filter} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         async getRecordListAction(context: any, payload: any) {
           context.commit("setRecordListMutation", payload);
@@ -315,7 +315,7 @@ export default class BaseStore {
 
         /**
          * Set các giá trị tìm kiếm và phân trang
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setFilterAction(context: any, payload: any){
           context.commit("setFilterMutation", payload);
@@ -324,7 +324,7 @@ export default class BaseStore {
         /**
          * Xét toggle checkbox phần tử được check
          * @param {index các nhân viên được toggle} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setCheckboxRecordAction(context: any, payload: any) {
           context.commit("setCheckboxRecordMutation", payload);
@@ -333,7 +333,7 @@ export default class BaseStore {
         /**
          * Xét xoá checkbox phần tử được check
          * @param {index các nhân viên được toggle} payload 
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setCheckboxUnCheckRecordAction(context: any, payload: any) {
           context.commit("setCheckboxUnCheckRecordMutation", payload);
@@ -341,7 +341,7 @@ export default class BaseStore {
 
         /**
          * Xét toggle tất cả checkbox được check
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setAllCheckboxRecordAction(context: any, payload: any) {
           context.commit("setAllCheckboxRecordMutation", payload);
@@ -349,7 +349,7 @@ export default class BaseStore {
         
         /**
          * Xét xoá tất cả checkbox được check
-         * Khắc Tiềm - 08.03.2023
+         * TVTHAI - 08.03.2023
          */
         setEmptyCheckBoxRecordAction(context: any){
           context.commit("setEmptyCheckBoxRecordMutation");

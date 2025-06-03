@@ -1,6 +1,6 @@
 /**
  * Giới tính
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum Gender{
   /** Nam */
@@ -15,7 +15,7 @@ export enum Gender{
 
 /**
  * Lưu các trạng thái thông báo 
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum ENotificationType {
   /** Thành công */
@@ -30,7 +30,7 @@ export enum ENotificationType {
 
 /**
  * Mã phím
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum KeyCode {
   /** Phím ESC */
@@ -81,7 +81,7 @@ export enum KeyCode {
 
 /**
  * Các loại kiểu vật tư hàng hoá
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum Nature {
   /** Hàng hoá */
@@ -102,7 +102,7 @@ export enum Nature {
 
 /**
  * Giảm thuế
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum DepreciatedTax {
   /** Không xác định */
@@ -117,7 +117,7 @@ export enum DepreciatedTax {
 
 /**
  * StatusCode
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum StatusCode {
   /** Không có quyền */
@@ -126,7 +126,7 @@ export enum StatusCode {
 
 /**
  * StatusOrder
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export enum StatusOrder {
   /// <summary>
@@ -158,7 +158,7 @@ export enum StatusOrder {
 /// <summary>
 /// Kiểu thanh toán
 /// </summary>
-/// Create by: Nguyễn Khắc Tiềm (21/09/2022)
+/// Create by: Nguyễn TVTHAI (21/09/2022)
 export enum TypeCheckout
 {
   /// <summary>

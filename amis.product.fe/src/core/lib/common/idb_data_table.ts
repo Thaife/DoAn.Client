@@ -5,24 +5,24 @@ import { SystemConstants } from './system.constants';
 
 /**
  * Quản lý database indexedDB ở client
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class IdbDataTable {
   /** 
    * Tên database 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public DatabaseName: string = SystemConstants.get(EntitySystem.IdbData);
 
   /** 
    * Tên Store 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public StoreName: string = SystemConstants.get(EntitySystem.DataTable);
 
   /** 
    * Tên bảng 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public TableName: string;
 
@@ -32,7 +32,7 @@ export class IdbDataTable {
 
   /** 
    * Khai váo db 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public dbPromise: any = openDB(this.DatabaseName, 1, {
     upgrade: (db) => {
@@ -44,7 +44,7 @@ export class IdbDataTable {
 
   /** 
    * Lấy ra table
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public async get() {
     return (await this.dbPromise).get(this.StoreName, this.TableName);
@@ -52,7 +52,7 @@ export class IdbDataTable {
 
   /**
    * Set table 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public async set(data: any){
     return (await this.dbPromise).put(this.StoreName, data, this.TableName);
@@ -60,7 +60,7 @@ export class IdbDataTable {
 
   /** 
    * Xoá table 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public async delete(){
     return (await this.dbPromise).delete(this.StoreName, this.TableName);
@@ -68,7 +68,7 @@ export class IdbDataTable {
 
   /** 
    * Clear table 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public async clear(){
     return (await this.dbPromise).clear(this.StoreName);
@@ -76,7 +76,7 @@ export class IdbDataTable {
 
   /** 
    * Lấy ra tên table
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public async keys(){
     return (await this.dbPromise).getAllKeys(this.StoreName);
@@ -84,7 +84,7 @@ export class IdbDataTable {
 
   /** 
    * Kiểm tra dữ liệu column đã được lưu ở indexedDB trước đó chưa 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public checkAndSetColumns = async (columns: Header []): Promise<Header []> => {
     await this.get().then((data: Header []) => {

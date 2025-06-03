@@ -1,6 +1,6 @@
 /**
  * Lưu thông tin đường dẫn api môi trường production
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 
 export const environment = {

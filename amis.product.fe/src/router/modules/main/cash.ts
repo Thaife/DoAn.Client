@@ -2,7 +2,7 @@ const router: any = [
   {
     /** 
      * Trang tiền mặt 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/cash',
     name: "cashMain",
@@ -12,7 +12,7 @@ const router: any = [
   {
     /** 
      * Trang nhân viên
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      *  */
     path: '/cash/employee',
     component: () => import('../../../views/main/cash/employee/EmployeePage.vue'),
@@ -22,7 +22,7 @@ const router: any = [
   {
     /** 
      * Trang đơn vị
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      *  */
     path: '/cash/branch',
     component: () => import('../../../views/main/cash/branch/BranchPage.vue'),

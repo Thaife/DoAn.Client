@@ -1,6 +1,6 @@
 /**
  * kiểm tra xem chuỗi có là Guid và Guid có rỗng và lưu Guid empty
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class Guid {
 

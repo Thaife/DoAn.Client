@@ -2,7 +2,7 @@ import config from '../../../assets/config.prod.json';
 
 /**
  * Lấy ra thông tin config trong file config.prod.json
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class SystemConstants {
     [key: string]: any;

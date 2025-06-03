@@ -193,7 +193,7 @@ export default defineComponent({
     const store: any = useStore();
     /**
      * Bóc tách props ra từ props chuyển vào
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const { BaseComponent }: any = toRefs(props);
 
@@ -350,7 +350,7 @@ export default defineComponent({
 
     /**
      * Danh sách chứa các id
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const listID = computed(()=> {
       return BaseComponent.value.recordList.reduce((acc: any, cur: any)=> {
@@ -359,7 +359,7 @@ export default defineComponent({
     });
     /**
      * Ẩn hiện check tất cả
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isShowCheckAllRecord = computed(()=> {
       if(BaseComponent.value.checkShowActionSeries){
@@ -378,19 +378,19 @@ export default defineComponent({
 
     /**
      * Lưu đối tượng được click các hành động như xoá , nhân bản, ...
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const rowColumn = ref(null);
 
     /**
      * Biến chứa vị trí set ẩn hiện action
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const positionAction = ref({ top: 0, right: 0 });
 
     /**
      * hàm xử lý hiển thị giới tính dựa trên enum
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function formatGender(gender: any) {
       if (Gender.Male == gender) {
@@ -405,7 +405,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý hiển thị giới tính dựa trên enum
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function formatNature(nature: any){
       if (nature == Nature.Goods) {
@@ -424,7 +424,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý hiển thị giới tính dựa trên enum
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function formatDepreciatedTax(Depreciated: any){
       if (Depreciated == DepreciatedTax.undefined) {
@@ -439,7 +439,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý hiển thị giới tính dựa trên enum
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function formatIsActive(isActive: any){
       if(isActive == true || isActive == 'true'){
@@ -454,7 +454,7 @@ export default defineComponent({
     /**
      * Hàm xử lý ẩn hiện các action
      * @param {Thông tin đỐi tượng được click} row 
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleShowAction(event: any, row: any) {
       try {
@@ -475,7 +475,7 @@ export default defineComponent({
 
     /**
      * Hàm xử lý ẩn action
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleCloseAction() {
       rowColumn.value = null;
@@ -483,7 +483,7 @@ export default defineComponent({
     
     /**
      * Hàm xử lý vị trí ẩn hiện các action
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function setPositionActionTable(event: any) {
       try {

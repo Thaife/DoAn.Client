@@ -103,7 +103,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 /**
  * Khai báo các api của module
- * Khắc Tiềm 13-03-2023
+ * TVTHAI 13-03-2023
  */
 const api:EmployeeApi = new EmployeeApi();
 const { t } = useI18n();
@@ -116,7 +116,7 @@ const isValid = ref(false);
 const Base = new Grid(ModuleName.Employee, api);
   /**
  * Hàm xử lý đóng
- * Khắc Tiềm 19.09.2022
+ * TVTHAI 19.09.2022
  */
 const handleEventKey = function (event: any) {
   Base.handleEventFormCtrlShiftS(event, props.close, null, save, null, save, null)
@@ -137,7 +137,7 @@ function save(){
 }
 	/** 
  * Hàm validate input
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
  function validateInput() {
   return [

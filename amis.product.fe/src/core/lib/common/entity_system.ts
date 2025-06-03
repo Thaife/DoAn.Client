@@ -1,6 +1,6 @@
 /** 
  * Lưu thông tin tên key được đặt trong file config.prod.json
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class EntitySystem {
     public static CurrentUser: string = 'CURRENT_USER';

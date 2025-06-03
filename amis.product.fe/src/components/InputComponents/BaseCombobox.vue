@@ -222,7 +222,7 @@ export default defineComponent({
      * defaultValue: giá trị mặc định
      * noAnimation: có hiệu ứng hay không
      * required: có bắt buộc hay không
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const { options, header, modelValue, defaultValue, value, noAnimation, required, headerCode, selectMultiple, autoPosition }: any = toRefs(props);
 
@@ -230,61 +230,61 @@ export default defineComponent({
 
     /**
      * Giá trị mảng binding lên giao diện
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const optionValue: any = ref(null);
 
     /**
      * Element chứa danh sách select
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const listSelect: any = ref(null);
 
     /**
      * Trạng thái hiển thị validate
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isValid: any = ref(false);
 
     /**
      * biến thực hiện ẩn mở dropdown
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isShow: any = ref(false);
 
     /**
      * biến bắt lưu trạng thái animation
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isShowAnimation: any = ref(false);
 
     /**
      * biến bắt lấy thẻ to nhất của component
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
-    const template: any = ref(null); //(Khắc Tiềm - 15.09.2022)   
+    const template: any = ref(null); //(TVTHAI - 15.09.2022)   
 
     /**
      * biến bắt lấy thẻ input
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const input: any = ref(null);
 
     /**
      * biến lưu dữ liệu value khi được click
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const valueClick: any = ref(undefined);
 
     /**
      * Set vị trí list select hiển thị
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const positionListSelect: any = ref({ top: "calc(100% + 3px)", });
 
     /**
      * Set scroll list select đến vị trí giá trị được chọn
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     watch(isShow,(newValue)=> {
       if(newValue){
@@ -306,7 +306,7 @@ export default defineComponent({
 
     /**
      * nếu có sự thay đổi modelValue từ bên ngoài thì sẽ check render dropdown cho hợp lý
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     watch(modelValue, () => {
       if(!selectMultiple.value){
@@ -343,7 +343,7 @@ export default defineComponent({
 
     /**
      * Chuyển props thành data
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     watch(options, ()=>{
       optionValue.value = [...options.value];
@@ -355,7 +355,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý sự kiện khi nhấn nút lên hoặc nút xuống, enter và tab
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const handleEnum = function (event: any) {
       if (event.keyCode === KeyCode.Up) {
@@ -465,7 +465,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý sự kiện khi nhấn nút lên hoặc nút xuống, enter và tab
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleBlur(){
       handleSaveData(valueClick.value);
@@ -473,7 +473,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý ẩn dropdown khi click không trúng vào component
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const handleClickTemplate = function (event: any) {
       const isClick = template.value.contains(event.target);
@@ -488,7 +488,7 @@ export default defineComponent({
      * hàm xử lý khi người dùng click vào từng item trong dropdown
      * @param {Giá trị được chọn} value 
      * @param {Giá } index 
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleClickItem(value: any) {
       handleSaveData(value);
@@ -504,7 +504,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý khi người dùng focus vào ô input sẽ hiện dropdown
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleFocusInput() {
       try {
@@ -519,7 +519,7 @@ export default defineComponent({
 
     /**
      * Giá trị tìm kiếm được lưu lại
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const inputEnter: any = ref(null);
     const inputEvent: any = ref('');
@@ -530,7 +530,7 @@ export default defineComponent({
 
     /**
      * Tìm kiếm
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
      function searchData(event: any){
       if(optionValue.value.length > 0){
@@ -556,7 +556,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý khi người dùng nhập input sẽ hiện dropdown
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleInput(event: any) {
       try {
@@ -572,7 +572,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý khi người dùng bấm vào icon mở hoặc đóng dropdown
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleClickOpenCombobox() {
       try {
@@ -590,7 +590,7 @@ export default defineComponent({
 
     /**
      * Set vị trí list select hiển thị
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function setPositionListSelect() {
       if(autoPosition.value){
@@ -619,7 +619,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý hiển thị list select
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function toggleListSelect() {
       isShow.value = !isShow.value;
@@ -638,7 +638,7 @@ export default defineComponent({
 
     /**
      * trước khi mounted thì sẽ set giá trị cho giá trị đc click thông qua v-model hoặc defaultValue
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onBeforeMount(() => {
       options.value.forEach((item: any) => {
@@ -656,13 +656,13 @@ export default defineComponent({
 
     /**
      * lắng nghe sự kiện click component
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onMounted(() => window.addEventListener("click", handleClickTemplate));
 
     /**
      * xoá bỏ sự kiện lắng nghe
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onUnmounted(() => {window.removeEventListener("click", handleClickTemplate); window.removeEventListener("keydown", handleEnum);});
     return {

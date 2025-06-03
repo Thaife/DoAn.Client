@@ -71,13 +71,13 @@ export default defineComponent({
   setup(props: any) {
     /**
      * biến bắt lấy thẻ to nhất của component
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const template: any = ref(null);
 
     /**
      *  khi không click trúng component thì sẽ unmount component
-     * khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const handleClickTemplate = function (event: any) {
       try {
@@ -92,7 +92,7 @@ export default defineComponent({
     
     /**
      * lắng nghe sự kiện click component
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     setTimeout(() => {
       window.addEventListener("click", handleClickTemplate);
@@ -100,7 +100,7 @@ export default defineComponent({
 
     /**
      * xoá bỏ sự kiện lắng nghe
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */ 
     onUnmounted(() => window.removeEventListener("click", handleClickTemplate));
 

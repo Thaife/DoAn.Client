@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    Nguyễn Khắc Tiềm
+    Nguyễn TVTHAI
 </div>
 </template>
 

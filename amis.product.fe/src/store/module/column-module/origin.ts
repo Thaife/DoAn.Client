@@ -2,7 +2,7 @@ import { ModuleName, TypeFilter, TypeSearch, Header, ComparisonType, IdbDataTabl
 
 /**
  * Chứa các column nhân viên
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 let columns: Header [] = [
   new Header(

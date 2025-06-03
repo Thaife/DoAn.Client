@@ -254,7 +254,7 @@ export default defineComponent({
 
     /**
      *  khi không click trúng component thì sẽ unmount component
-     * khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
      const handleClickTemplate = function (event: any) {
       try {
@@ -299,7 +299,7 @@ export default defineComponent({
     })
     /**
      * xoá bỏ sự kiện lắng nghe
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */ 
      onUnmounted(() => {
       window.removeEventListener("click", handleClickTemplate);

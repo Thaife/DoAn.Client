@@ -5,38 +5,38 @@ const config = {
 		return {
 			/**
 			 * Trạng thái mở rộng sidebar
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			showSidebar: JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.isShowSidebar)) === false ? false : true,
 
 			/**
 			 * Số dòng hiển thị trên table
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			lineClamp: StorageService.getItemWithSystemConstants(EntitySystem.lineClamp) || StorageService.getItemWithSystemConstants(EntitySystem.lineClamp) === '' ? 
 			StorageService.getItemWithSystemConstants(EntitySystem.lineClamp) : SystemConstants.get(EntitySystem.lineClampDefault),
 
 			/**
 			 * Trạng thái show loader 
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			isShowLoader: false,
 
 			/**
 			 * Chứa danh sách thông báo
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			notifications: [],
 
 			/**
 			 * Trạng thái show thông báo   
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			isShowNotificationWanning: false,
 
 			/**
 			* Config thông báo wanning
-			* Khắc Tiềm - 08.03.2023
+			* TVTHAI - 08.03.2023
 			*/
 			configNotificationWanning: {
 				cancelAction: {
@@ -56,13 +56,13 @@ const config = {
 
 			/**
 			 * Trạng thái show thông báo   
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			isShowNotificationError: false,
 			
 			/**
 			* Config thông báo error
-			* Khắc Tiềm - 08.03.2023
+			* TVTHAI - 08.03.2023
 			*/
 			configNotificationError: {
 			agreeAction: {
@@ -77,13 +77,13 @@ const config = {
 
 			/**
 			 * Trạng thái show thông báo   
-			 * Khắc Tiềm - 08.03.2023
+			 * TVTHAI - 08.03.2023
 			 */
 			isShowNotificationQuestion: false,
 
 				/**
 				* Config thông báo Question
-				* Khắc Tiềm - 08.03.2023
+				* TVTHAI - 08.03.2023
 				*/
 			configNotificationQuestion: {
 				cancelAction: {
@@ -106,7 +106,7 @@ const config = {
 	mutations: {
 		/**
 		 * Mở thông báo wanning
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowNotificationWanningMutation(state: any, payload: any) {
 			state.configNotificationWanning.cancelAction.action = ()=> {
@@ -126,7 +126,7 @@ const config = {
 
 		/**
 		 * Mở thông báo error
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 			setToggleShowNotificationErrorMutation(state: any, payload: any) {
 			state.configNotificationError.agreeAction.action = ()=> {
@@ -138,7 +138,7 @@ const config = {
 
 		/**
 		 * Mở thông báo Question
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowNotificationQuestionMutation(state: any, payload: any) {
 			state.configNotificationQuestion.cancelAction.action = ()=> {
@@ -159,7 +159,7 @@ const config = {
 
 		/**
 		 * Set số dòng hiển thị 
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 * */
 		setLineClampMutation(state: any, payload: any){
 			state.lineClamp = payload;
@@ -167,7 +167,7 @@ const config = {
 
 		/**
 		 * Set mở rộng, thu nhỏ sidebar
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowSidebarMutation(state: any) {
 			state.showSidebar = !state.showSidebar;
@@ -175,7 +175,7 @@ const config = {
 
 		/**
 		 * Set ẩn hiện hiệu ứng loader
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowLoaderMutation(state: any) {
 			state.isShowLoader = !state.isShowLoader;
@@ -183,7 +183,7 @@ const config = {
 
 		/**
 		 * Thêm thông báo
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 			pushNotification(state: any, notification: any) {
 			state.notifications.push({
@@ -194,7 +194,7 @@ const config = {
 
 		/**
 		 * Xoá thông báo
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 			removeNotification(state: any, notificationToRemove: any) {
 			state.notifications = state.notifications.filter((notification: any) => {
@@ -205,7 +205,7 @@ const config = {
 	actions: {
 		/**
 				 * Mở thông báo wanning
-				 * Khắc Tiềm - 08.03.2023
+				 * TVTHAI - 08.03.2023
 				 */
 		setToggleShowNotificationWanningAction(context: any, payload: any) {
 			context.commit("setToggleShowNotificationWanningMutation", payload);
@@ -213,7 +213,7 @@ const config = {
 
 		/**
 				 * Mở thông báo error
-				 * Khắc Tiềm - 08.03.2023
+				 * TVTHAI - 08.03.2023
 				 */
 			setToggleShowNotificationErrorAction(context: any, payload: any) {
 			context.commit("setToggleShowNotificationErrorMutation", payload);
@@ -221,7 +221,7 @@ const config = {
 
 		/**
 				 * Mở thông báo Question
-				 * Khắc Tiềm - 08.03.2023
+				 * TVTHAI - 08.03.2023
 				 */
 			setToggleShowNotificationQuestionAction(context: any, payload: any) {
 			context.commit("setToggleShowNotificationQuestionMutation", payload);
@@ -229,7 +229,7 @@ const config = {
 
 		/**
 		 * Set số dòng hiển thị 
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 * */
 		setLineClampAction(context: any, payload: any){
 			context.commit("setLineClampMutation", payload);
@@ -237,7 +237,7 @@ const config = {
 
 		/**
 		 * Set mở rộng, thu nhỏ sidebar
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowSidebarAction(context: any) {
 			context.commit("setToggleShowSidebarMutation");
@@ -245,7 +245,7 @@ const config = {
 
 		/**
 		 * Set ẩn hiện hiệu ứng loader
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		setToggleShowLoaderAction(context: any) {
 			context.commit("setToggleShowLoaderMutation");
@@ -253,7 +253,7 @@ const config = {
 
 		/**
 		 * Thêm thông báo
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 		addNotification(context: any, notification: any){
 			context.commit('pushNotification', notification);
@@ -261,7 +261,7 @@ const config = {
 
 		/**
 		 * Xoá thông báo
-		 * Khắc Tiềm - 08.03.2023
+		 * TVTHAI - 08.03.2023
 		 */
 			removeNotification(context: any, notification: any){
 			context.commit('removeNotification', notification);

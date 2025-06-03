@@ -51,7 +51,7 @@ export default defineComponent({
     const { loadData, moduleFilter }: any = toRefs(props);
     /**
      * Sử dụng store của vuex
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
      const store = useStore();
     /**
@@ -64,7 +64,7 @@ export default defineComponent({
     /**
     * Hàm xử lý filter
     * @param {Cột cần xoá k filetr} column 
-    * Khắc Tiềm - 15.09.2022
+    * TVTHAI - 15.09.2022
     */
     function handleDeleteFilterItem(column: any = undefined){
       try {

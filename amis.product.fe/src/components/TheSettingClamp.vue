@@ -71,7 +71,7 @@ const lineClampModel: any = ref(lineClamp.value);
 
 /**
  * Hàm lưu giá trị clamp
- * Khắc Tiềm 19.09.2022
+ * TVTHAI 19.09.2022
  */
 function save(){
   StorageService.setItemWithSystemConstants(EntitySystem.lineClamp, lineClampModel.value)
@@ -81,7 +81,7 @@ function save(){
 
  /**
  * Hàm xử lý đóng
- * Khắc Tiềm 19.09.2022
+ * TVTHAI 19.09.2022
  */
 const handleEventKey = function (event: any) {
   if (event.keyCode === KeyCode.Esc) {

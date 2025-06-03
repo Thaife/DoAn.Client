@@ -7,7 +7,7 @@ import type BaseApi from '@/api/base_api';
 
 /** 
  * Chứa toàn bộ các base thêm sửa xoá được xây dựng
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 export class Grid extends Utils{
   /** Api được truyền vào từ lớp khởi tạo */
@@ -65,7 +65,7 @@ export class Grid extends Utils{
    */
 
   /** Hàm load dữ liệu lên table 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public loadData = async (filter: any = undefined) => {
     try{
@@ -100,7 +100,7 @@ export class Grid extends Utils{
   }
 
   /** Hàm xử lý checkbox value true thì là check ô tất cả check, value là 0,1,2 là xử lý các phần tử được check
-   * Khắc Tiềm - 08.03.2023 */
+   * TVTHAI - 08.03.2023 */
   public handleClickCheckbox = (value: any, listID: any) => {
     try {
       if (value === true) {
@@ -115,7 +115,7 @@ export class Grid extends Utils{
 
   /**
   * hàm lưu số lượng bản ghi muốn hiển thị vào local
-  * Khắc Tiềm - 08.03.2023
+  * TVTHAI - 08.03.2023
   */
   public setPageSize = async (record: number) => {
     StorageService.setItemWithSystemConstants(EntitySystem.PageSize, record)
@@ -125,7 +125,7 @@ export class Grid extends Utils{
   }
 
   /** Hàm xử lý search tự động và debounce 600ms 
-   * Khắc Tiềm - 08.03.2023*/
+   * TVTHAI - 08.03.2023*/
   public handleSearchData = async (event: any) =>{
     this.handleDebounce(600, async (event: any) => {
       this.keyword = event.target.value;
@@ -135,7 +135,7 @@ export class Grid extends Utils{
   }
 
   /** Hàm xử lý chuyển trang 
-   * Khắc Tiềm - 08.03.2023*/
+   * TVTHAI - 08.03.2023*/
   public selectPaging = async (value: any) => {
     this.recordSelectPaging.value = value;
     this.loadData({ v_Offset: value, v_Limit: this.PageSize, v_Where: this.keyword, });
@@ -143,7 +143,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm xử lý đóng mở setting table
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public handleShowSettingTable = async (columnCustom: any = undefined) => {
     if(columnCustom){
@@ -157,7 +157,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm fix column trên thanh header
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public handleFixColumn = (name: string) => {
     const columns: Header [] = JSON.parse(JSON.stringify(this.columnSetting.value));
@@ -174,7 +174,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm fix column khi người dùng kéo những column bị fix
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public setupColumns = async () => {
     const columns: Header [] = JSON.parse(JSON.stringify(this.columns.value));
@@ -184,7 +184,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm xử lý xoá 1 bản ghi đã chọn
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public deleteRecord = (id: any) => {
     this.apiService.callApi(this.api.deleteRecordApi, id, async () => { 
@@ -201,7 +201,7 @@ export class Grid extends Utils{
   
   /**
    * Hàm xử lý xoá toàn bộ danh sách đã chọn
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public deleteAll = () => {
     const count = this.checkShowActionSeries.value.length;
@@ -217,7 +217,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm thực hiện call api toggle active record
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public toggleRecordActiveApi = (recordId: any) => {
     this.apiService.callApi(this.api.toggleActiveApi, recordId, () => { 
@@ -227,7 +227,7 @@ export class Grid extends Utils{
 
   /** 
    * Hàm mở form thêm, sửa 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public openModal = async (stateForm: any = ActionTable.Add, recordId: any = undefined) => {
     this.setStateForm(stateForm);
@@ -252,7 +252,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm đóng form thêm, sửa 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public closeModal = () => {
     this.isShowModal.value = false;
@@ -260,7 +260,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm set trạng thái form (Sửa, thêm, nhân bản, ...)
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public setStateForm = (state: string) => {
     this.StateForm.value = state;
@@ -268,7 +268,7 @@ export class Grid extends Utils{
 
   /** 
    * Hàm export excel theo điều kiện 
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    * */
   public exportToExcel = () => {
     try{
@@ -347,7 +347,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm xử lý show thông báo khi có lỗi xảy ra thêm sửa xoá
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public addNotificationCRUD = (message: any, module: string = 'common') => {
     this.addNotification(ENotificationType.Error, this.formatServiceResponse(message, module));
@@ -355,7 +355,7 @@ export class Grid extends Utils{
 
   /**
    * Hàm xử lý format dữ liệu trả về từ backend
-   * Khắc Tiềm - 08.03.2023
+   * TVTHAI - 08.03.2023
    */
   public formatServiceResponse = (message: any, module: string = 'common') => {
     const label = 0; // Tách message ra thành mảng lấy phần tử thứ 0

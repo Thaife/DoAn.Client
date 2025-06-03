@@ -27,31 +27,31 @@ export default defineComponent({
   props: [
     /**
      * v-model
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     "modelValue", 
     
     /**
      * Giá trị của ô checkbox
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     "value", 
     
     /**
      * Dữ liệu khi được check
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     "trueValue", 
     
     /**
      * Dữ liệu khi không được check
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     "falseValue", 
 
     /**
      * Có được check hay không khi k sử dụng đến v-model
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     "checked",
     "id",
@@ -70,7 +70,7 @@ export default defineComponent({
     const { lockCheckBox } :any = toRefs(props);
     /**
      * Sự kiện bắn dữ liệu cập nhật cho component cha
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const computedValue = computed({
       get() {

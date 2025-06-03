@@ -28,27 +28,27 @@ import { NotificationModal, NotificationQuestion, NotificationError, Notificatio
 
   /**
   * Biến store trong vuex
-  * Khắc Tiềm - 15.09.2022
+  * TVTHAI - 15.09.2022
   */
   const store: any = useStore();
 
   /**
    * Biến lưu trạng thái thông báo 
-   * Khắc Tiềm - 15.09.2022
+   * TVTHAI - 15.09.2022
    */
   const isShowNotificationWanning: any = computed(() => store.state.config.isShowNotificationWanning);
   const configNotificationWanning: any = computed(() => store.state.config.configNotificationWanning);
 
   /**
    * Biến lưu trạng thái thông báo  
-   * Khắc Tiềm - 15.09.2022
+   * TVTHAI - 15.09.2022
    */
   const isShowNotificationError: any = computed(() => store.state.config.isShowNotificationError);
   const configNotificationError: any = computed(() => store.state.config.configNotificationError);
 
   /**
    * Biến lưu trạng thái thông báo  
-   * Khắc Tiềm - 15.09.2022
+   * TVTHAI - 15.09.2022
    */
   const isShowNotificationQuestion: any = computed(() => store.state.config.isShowNotificationQuestion);
   const configNotificationQuestion: any = computed(() => store.state.config.configNotificationQuestion);

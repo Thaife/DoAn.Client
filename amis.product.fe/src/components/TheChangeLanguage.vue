@@ -17,13 +17,13 @@ const lang = computed(() => i18n.global.locale.value);
 
 /**
  * Biến store vuex
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
  const store: any = useStore();
 
  /**
  * Lấy ra trạng thái show sidebar
- * Khắc Tiềm - 15.09.2022
+ * TVTHAI - 15.09.2022
  */
 let showSidebar: any = computed(() => store.state.config.showSidebar);
 

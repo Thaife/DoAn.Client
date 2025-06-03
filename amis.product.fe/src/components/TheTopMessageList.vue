@@ -21,13 +21,13 @@ export default defineComponent({
   setup(){
     /**
      * Biến store trong vuex
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const store = useStore();
 
     /**
      * Chứa các thông báo
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const notifications: any = computed(() => store.state.config.notifications);
     return {

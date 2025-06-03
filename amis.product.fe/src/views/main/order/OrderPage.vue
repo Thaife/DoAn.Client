@@ -54,7 +54,7 @@ const ViewOrder = defineAsyncComponent(() => import('./ViewOrder.vue'));
 const { t } = useI18n();
 /**
  * Khai báo các api của module
- * Khắc Tiềm 13-03-2023
+ * TVTHAI 13-03-2023
  */
 const api:CartApi = new CartApi();
 
@@ -63,7 +63,7 @@ const Base:Grid = reactive(new Grid(ModuleName.Cart, api));
 
 /**
  * Trước khi mounted sẽ load dữ liệu 1 lần
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onBeforeMount(() => {
 	Base.loadData({ v_Offset: Base.recordSelectPaging, v_Limit: Base.PageSize, v_Where: Base.keyword });
@@ -71,7 +71,7 @@ onBeforeMount(() => {
 
 /**
  * Hàm xử lý khi click vào các hành động của từng cột dữ liệu table
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 function handleClickActionColumTable(action: any, recordId: any, recordCode: any) {
 	try {
@@ -109,7 +109,7 @@ function exActionAll(action: any, recordId: any = undefined){
 
 /**
  *  Hàm thực hiện hỏi xoá một bản ghi 
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
 */
 function questionDeleteRecordApi(recordId: any, recordCode:any ){
   Base.showNotificationWanning(Base.deleteRecord, t('message.crud.question_wanning_delete', { module: t(`page.${Base.Module}`), code: recordCode ? recordCode : t('message.crud.statue_of_liberty') }), recordId);
@@ -117,7 +117,7 @@ function questionDeleteRecordApi(recordId: any, recordCode:any ){
 
 /** 
  * Hàm hỏi xác nhận xoá nhiều 
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
 */
 function handleQuestionDeleteAll() {
 	try {
@@ -139,7 +139,7 @@ function handleKey(event: any){
 
 /** 
  * Khi Mounted thì bắt đầu lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onMounted(() => {
 	window.addEventListener("keydown", handleKey);
@@ -148,7 +148,7 @@ onMounted(() => {
 
 /** 
  * Khi UnMounted thì bắt đầu huỷ lắng nghe các sự kiện
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 onUnmounted(() =>{
 	window.removeEventListener("keyup", Base.handleEventInterruptCtrlNum1);

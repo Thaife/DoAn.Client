@@ -8,7 +8,7 @@ const router = createRouter({
     {
       /** 
        * Nhánh chính 
-       * Khắc Tiềm - 08.03.2023
+       * TVTHAI - 08.03.2023
        * */
       path: '/',
       component: () => import('../views/main/MainPage.vue'),
@@ -17,7 +17,7 @@ const router = createRouter({
     {
       /** 
        * Trang login 
-       * Khắc Tiềm - 08.03.2023
+       * TVTHAI - 08.03.2023
        * */
       path: '/login',
       component: () => import('../views/login/LoginPage.vue'),
@@ -26,7 +26,7 @@ const router = createRouter({
     {
       /** 
        * Trang không tồn tại 
-       * Khắc Tiềm - 08.03.2023
+       * TVTHAI - 08.03.2023
        * */
       path: '/:pathMatch(.*)*',
       redirect: '/not-found'
@@ -37,7 +37,7 @@ const router = createRouter({
 
 /**
  * Hàm trước khi route được thực thi
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 router.beforeEach((to: any, from: any, next: any) => {
   document.title = i18n.global.t(to.meta.title ? to.meta.title : 'page.default') // Đặt tiêu đề trang theo ngôn ngữ hiện tại

@@ -16,13 +16,13 @@ import { TheLoader, TheTopMessageList, ListNotification } from '@/core/public_co
 
   /**
   * Biến store trong vuex
-  * Khắc Tiềm - 15.09.2022
+  * TVTHAI - 15.09.2022
   */
   const store: any = useStore();
 
   /**
    * Biến lưu trạng thái loader 
-   * Khắc Tiềm - 15.09.2022
+   * TVTHAI - 15.09.2022
    */
   const isShowLoader: any = computed(() => store.state.config.isShowLoader);
 </script>

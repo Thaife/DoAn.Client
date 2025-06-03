@@ -6,7 +6,7 @@ import viMessage from './vi.json';
 /**
  * Kiểm tra xem đã lưu ngôn ngữ người dùng cài chưa vào localstore, 
  * nếu chưa lưu thì tiến hành lưu lại ngôn ngữ mặc định được cấu hình trong file config.prod.json
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 try {
   if(!StorageService.getItemWithSystemConstants(EntitySystem.Lang)){
@@ -19,7 +19,7 @@ try {
 
 /**
  * Khởi tạo i18n với ngôn ngữ là vi và en
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const i18n = createI18n({
   legacy: false, // you must set `false`, to use Composition API

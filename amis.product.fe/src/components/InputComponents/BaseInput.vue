@@ -50,7 +50,7 @@ export default defineComponent({
     // <!-- @keypress="isInputNumber($event)" -->
     /**
      * Element thẻ input
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const tagInput:any = ref(null);
 
@@ -62,19 +62,19 @@ export default defineComponent({
      * maxLength: độ dài max là value
      * modelValue: v-model
      * isNumber: là số hay k
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const { focus, required, isEmail, isPhone, maxLength, modelValue, isNumber, maxValue }:any = toRefs(props);
 
     /**
      * Trạng thái hiển thị validate
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isValid:any = ref(false);
 
     /**
      * trạng thái hiển thị validate email, phone
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isValidEmailPhone:any = ref(false);
 
@@ -104,7 +104,7 @@ export default defineComponent({
 
     /**
      * Sau khi được mounted vào dom thì nếu đc chỉ định focus ô input sẽ đc focus
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onMounted(() => {
       if (focus.value === true) {
@@ -118,7 +118,7 @@ export default defineComponent({
 
     /**
      * hàm xử lý nhập input và validate
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleInput(event:any) {
       if (maxLength.value && !isNumber.value) {
@@ -167,7 +167,7 @@ export default defineComponent({
 
     /**
      * Hàm cập nhật giá trị
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function updateValue(value:any){
       if(maxValue.value){
@@ -189,7 +189,7 @@ export default defineComponent({
     }
     /**
      * hàm xử lý validate điện thoại và email
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     function handleCheckEmailPhone(event:any) {
       if (event.target.value != "") {
@@ -211,7 +211,7 @@ export default defineComponent({
 
     /**
      * Hàm xử lý chỉ cho nhập số
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     // function isInputNumber(evt) {
     //   if(isNumber.value){

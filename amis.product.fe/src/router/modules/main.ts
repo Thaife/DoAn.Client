@@ -6,7 +6,7 @@ const router: any = [
   {
     /** 
      * Module trang chủ 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/',
     children: [...home],
@@ -14,7 +14,7 @@ const router: any = [
   {
     /** 
      * Module trang tiền mặt 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/cash',
     children: [...cash],
@@ -22,7 +22,7 @@ const router: any = [
   {
     /** 
      * Module trang kho 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/inventory',
     children: [...inventory],
@@ -30,7 +30,7 @@ const router: any = [
   {
     /** 
      * Trang kho
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/category',
     component: () => import('../../views/main/inventory/category/CategoryPage.vue'),
@@ -39,7 +39,7 @@ const router: any = [
   {
     /** 
      * Trang kho
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/origin',
     component: () => import('../../views/main/inventory/origin/OriginPage.vue'),
@@ -48,7 +48,7 @@ const router: any = [
   {
     /** 
      * Trang kho
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/trademark',
     component: () => import('../../views/main/inventory/trademark/TrademarkPage.vue'),
@@ -57,7 +57,7 @@ const router: any = [
   {
     /** 
      * Trang order
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/order',
     component: () => import('../../views/main/order/OrderPage.vue'),
@@ -66,7 +66,7 @@ const router: any = [
   {
     /** 
      * Trang order
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/coupon',
     component: () => import('../../views/main/coupon/CouponPage.vue'),
@@ -75,7 +75,7 @@ const router: any = [
   {
     /** 
      * Trang không tồn tại 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/not-found',
     component: () => import('../../views/main/not-found/NotFound.vue'),
@@ -84,7 +84,7 @@ const router: any = [
   {
     /** 
      * Trang không tồn tại 
-     * Khắc Tiềm - 08.03.2023
+     * TVTHAI - 08.03.2023
      * */
     path: '/feature-built',
     component: () => import('../../views/main/Construction/ConstructionPage.vue'),

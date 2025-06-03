@@ -65,13 +65,13 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 /**
  * Khai báo các api của module
- * Khắc Tiềm 13-03-2023
+ * TVTHAI 13-03-2023
  */
  const api:CartApi = new CartApi();
  
 /**
  * Props truyền vào với những Base từ bên component cha
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const props = defineProps({
   Base: { type: Grid, required: true },
@@ -95,7 +95,7 @@ function addStatusOrder(){
 }
 /**
  * Chứa các column nhân viên
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
  const columns: Header [] = [
   new Header(
@@ -136,7 +136,7 @@ columns.forEach((item: Header, index)=> {
 
 /**
  * Khởi tạo Base truyền vào table
- * Khắc Tiềm - 08.03.2023
+ * TVTHAI - 08.03.2023
  */
 const BaseComponent:any = ref(
   {
@@ -178,7 +178,7 @@ onBeforeMount(() => {
 
 /**
  * Hàm xử lý đóng
- * Khắc Tiềm 19.09.2022
+ * TVTHAI 19.09.2022
  */
  const handleEventKey = function (event: any) {
   if (event.keyCode === KeyCode.Esc) {

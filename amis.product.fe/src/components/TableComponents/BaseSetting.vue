@@ -95,7 +95,7 @@ export default defineComponent({
   setup(props) {
     /**
      * Hàm xử lý ẩn hiện setting table
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const { handleShowSettingTable, columns }: any = toRefs(props);
 
@@ -130,12 +130,12 @@ export default defineComponent({
 
     /**
      * Biến chứa trạng thái ẩn hiện setting table
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     const isShowSettingTableAnimation = ref(false);
 
     /** Hàm đóng và lưu dữ liệu 
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
     */
     async function closeDone(){
       columnCustom.forEach((item: Header, index: any) => {
@@ -147,7 +147,7 @@ export default defineComponent({
 
     /**
      * Hàm xử lý đóng mở cài đặt table
-     * Khắc Tiềm 19.09.2022
+     * TVTHAI 19.09.2022
      */
     const handleEventKey = function (event: any) {
       if (event.keyCode === KeyCode.Esc) {
@@ -167,7 +167,7 @@ export default defineComponent({
 
     /**
      * Khi mounted thì sẽ lắng nghe sự kiện nhấn phím
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onMounted(() => {
       window.addEventListener("keydown", handleEventKey);
@@ -178,7 +178,7 @@ export default defineComponent({
 
     /**
      * Khi onUnmounted thì sẽ xoá bỏ sự kiện nhấn phím
-     * Khắc Tiềm - 15.09.2022
+     * TVTHAI - 15.09.2022
      */
     onUnmounted(() => {
       window.removeEventListener("keydown", handleEventKey);
