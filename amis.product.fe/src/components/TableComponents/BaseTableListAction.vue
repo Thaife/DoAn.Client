@@ -4,7 +4,7 @@
       top: positionAction.top + 'px',
       right: positionAction.right + 'px',
     }"
-    v-if="actionTable && row"
+    v-if="actionTable && actionTable.actionList.length > 0 && row"
     class="table-list_action"
     ref="template"
   >

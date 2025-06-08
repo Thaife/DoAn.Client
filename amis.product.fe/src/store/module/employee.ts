@@ -1,4 +1,4 @@
-import { ActionTable, InfoTable, ModuleName } from '@/core/public_api';
+import { ActionTable, InfoTable, ModuleName, Employee, StorageService, EntitySystem } from '@/core/public_api';
 import BaseStore from '../base_store';
 import { employee } from './column-module/index'
 
@@ -18,13 +18,15 @@ let actions: any = {
 	
 };
 
+const user:Employee = JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser));
+
 /**
  * Các action thao tác với table
  * TVTHAI - 08.03.2023
  */
 const actionTable: InfoTable = {
   actionDefault: ActionTable.Edit,
-	actionList: [ActionTable.Replication, ActionTable.Delete, ActionTable.StopUsing],
+	actionList: [ActionTable.Replication, ActionTable.Delete],
 	fieldId: "employeeID",
 	fieldCode: "employeeCode",
 	fieldActive: "isActive",

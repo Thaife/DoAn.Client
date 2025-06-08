@@ -15,6 +15,8 @@
           <p class="info-order info-order-header">
             {{ $t('page.order') }}: {{ orderDetail.userName }} - {{ orderDetail.phoneNumber }} - {{ orderDetail.email }} - {{ Base.formatDateDDMMYYYYHHMMSS(orderDetail.modifiedDate + '') }}
             <br>
+            Số điện thoại: {{ orderDetail.phoneNumber }}
+            <br>
             {{ $t('common.delivery') }}: {{ orderDetail.address }} -  {{ orderDetail.ward }} -  {{ orderDetail.district }} -  {{ orderDetail.province }}
             <br>
             {{ $t('common.note') }}: {{ orderDetail.description }}
@@ -76,7 +78,7 @@ const { t } = useI18n();
 const props = defineProps({
   Base: { type: Grid, required: true },
 })
-const columnProduct = computed<Header []>(() => props.Base.store.state[`product`].columns.filter(function (value: any) { return value.IsShow; }));
+const columnProduct = computed<Header []>(() => props.Base.store.state[`product`].columns.filter(function (value: any) { return value.IsShow && value.Field != "purchasePrice" && value.Field != "quantity"; }));
 const orderDetail = ref<Order>(new Order());
 const statusOrder = ref('');
 

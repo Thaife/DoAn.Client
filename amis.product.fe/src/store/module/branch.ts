@@ -1,4 +1,4 @@
-import { ActionTable, InfoTable, ModuleName } from '@/core/public_api';
+import { ActionTable, InfoTable, ModuleName, Employee, EntitySystem, StorageService } from '@/core/public_api';
 import BaseStore from '../base_store';
 import { branch } from './column-module/index'
 
@@ -18,16 +18,19 @@ let actions: any = {
 	
 };
 
+const user:Employee = JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser));
+
+
 /**
  * Các action thao tác với table
  * TVTHAI - 08.03.2023
  */
 const actionTable: InfoTable = {
   actionDefault: ActionTable.Edit,
-	actionList: [ActionTable.Replication, ActionTable.Delete, ActionTable.StopUsing],
-	fieldId: "branchID",
-	fieldCode: "branchCode",
-	fieldActive: "isActive",
+  actionList: user && user.roleType === 1 ? [ActionTable.Replication, ActionTable.Delete] : [],
+  fieldId: "branchID",
+  fieldCode: "branchCode",
+  fieldActive: "isActive",
 };
 
 /**

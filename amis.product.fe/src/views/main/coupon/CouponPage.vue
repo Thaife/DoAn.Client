@@ -5,7 +5,7 @@
         <h1>{{ $t('page.coupon') }}</h1>
       </div>
       <div class="action-table">
-					<button style="background-color: var(--primary__color); color: var(--while__color);" @click="Base.openModal(ActionTable.Add)" title="Ctrl + 1" class="btn btn-primary">{{ $t('common.add') }}</button>
+					<button v-if="employee.roleType == 1" style="background-color: var(--primary__color); color: var(--while__color);" @click="Base.openModal(ActionTable.Add)" title="Ctrl + 1" class="btn btn-primary">{{ $t('common.add') }}</button>
       </div>
     </div>
     <div class="table-function sticky">
@@ -18,7 +18,7 @@
       </div>
       <div style="min-width: 350px;" class="table-function_search">
         <div @click="Base.loadData()" class="action-render_table reload-table" :content="$t('common.load_data')"></div>
-        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')"></div>
+        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')" v-if="employee.roleType == 1"></div>
         <div @click="Base.handleShowSettingTable()" class="action-render_table setting-table" :content="$t('common.customize_interface')"></div>
       </div>
     </div>
@@ -36,8 +36,8 @@
 </template>
 
 <script setup lang="ts">
-import { Grid, ModuleName, ActionTable } from '@/core/public_api';
-import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent } from 'vue';
+import { Grid, ModuleName, ActionTable, StorageService, Employee, EntitySystem } from '@/core/public_api';
+import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import CouponApi from '@/api/module/coupon';
 const FormCoupon = defineAsyncComponent(() => import('./FormCoupon.vue'))
@@ -49,9 +49,12 @@ const { t } = useI18n();
  */
 const api:CouponApi = new CouponApi();
 
-/** Sử dụng base thư viện Grid đã viết */
-const Base:Grid = reactive(new Grid(ModuleName.Coupon, api));
+const employee = ref<Employee>(JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser)));
 
+/** Sử dụng base thư viện Grid đã viết */
+const _grid:Grid = new Grid(ModuleName.Coupon, api);
+_grid.hideAction = true;
+const Base:Grid = reactive(_grid);
 /**
  * Trước khi mounted sẽ load dữ liệu 1 lần
  * TVTHAI - 08.03.2023
@@ -67,6 +70,9 @@ onBeforeMount(() => {
  */
 function handleClickActionColumTable(action: any, recordId: any, recordCode: any) {
 	try {
+    if(employee.value.roleType != 1) {
+      return;
+    }
 		if (action == ActionTable.Edit || action ==  ActionTable.Replication) {
 			Base.openModal(action, recordId);
 		} else if (action == ActionTable.Delete) {

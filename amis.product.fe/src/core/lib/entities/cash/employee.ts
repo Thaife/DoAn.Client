@@ -71,6 +71,8 @@ export class Employee extends BaseEntity{
   /** Là nhà cung cấp */
   public isVendor: boolean = false;
 
+  public roleType: number = 1;
+
   /** Mật khẩu */
   public password: string = '';
 

@@ -129,26 +129,26 @@ let columns: Header [] = [
     "200",
     { typeSearch: TypeSearch.Text, columnSearch: "employee.EmployeeAddress" , typeFilter: TypeFilter.Text, module: ModuleName.Employee, headerSearch: 'common.address'},
   ),
-  new Header(
-    "isCustomer",
-    "employee.IsCustomer",
-    'module.cash.isCustomer',
-    "170",
-    { typeSearch: TypeSearch.Number, columnSearch: "employee.IsCustomer" , typeFilter: TypeFilter.Radio, data: [
-      { value: 'true', header: 'common.yes' },
-      { value: 'false', header: 'common.no' },
-    ], module: ModuleName.Employee, headerSearch: 'module.cash.isCustomer', comparisonType: ComparisonType.Equal },
-  ),
-  new Header(
-    "isVendor",
-    "employee.IsVendor",
-    'module.cash.isVendor',
-    "170",
-    { typeSearch: TypeSearch.Number, columnSearch: "employee.IsVendor" , typeFilter: TypeFilter.Radio, data: [
-      { value: 'true', header: 'common.yes' },
-      { value: 'false', header: 'common.no' },
-    ], module: ModuleName.Employee, headerSearch: 'module.cash.isVendor', comparisonType: ComparisonType.Equal },
-  ),
+  // new Header(
+  //   "isCustomer",
+  //   "employee.IsCustomer",
+  //   'module.cash.isCustomer',
+  //   "170",
+  //   { typeSearch: TypeSearch.Number, columnSearch: "employee.IsCustomer" , typeFilter: TypeFilter.Radio, data: [
+  //     { value: 'true', header: 'common.yes' },
+  //     { value: 'false', header: 'common.no' },
+  //   ], module: ModuleName.Employee, headerSearch: 'module.cash.isCustomer', comparisonType: ComparisonType.Equal },
+  // ),
+  // new Header(
+  //   "isVendor",
+  //   "employee.IsVendor",
+  //   'module.cash.isVendor',
+  //   "170",
+  //   { typeSearch: TypeSearch.Number, columnSearch: "employee.IsVendor" , typeFilter: TypeFilter.Radio, data: [
+  //     { value: 'true', header: 'common.yes' },
+  //     { value: 'false', header: 'common.no' },
+  //   ], module: ModuleName.Employee, headerSearch: 'module.cash.isVendor', comparisonType: ComparisonType.Equal },
+  // ),
   // new Header(
   //   "isActive",
   //   "employee.IsActive",

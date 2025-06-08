@@ -114,6 +114,20 @@ let columns: Header [] = [
     { typeSearch: TypeSearch.Number, columnSearch: "product.Price" , typeFilter: TypeFilter.Number, module: ModuleName.Product, headerSearch: 'module.inventory.price'},
   ),
   new Header(
+    "purchasePrice",
+    "product.PurchasePrice",
+    'module.inventory.purchasePrice',
+    "200",
+    { typeSearch: TypeSearch.Number, columnSearch: "product.PurchasePrice" , typeFilter: TypeFilter.Number, module: ModuleName.Product, headerSearch: 'module.inventory.purchasePrice'},
+  ),
+  new Header(
+    "quantity",
+    "product.Quantity",
+    'module.inventory.quantity',
+    "200",
+    { typeSearch: TypeSearch.Number, columnSearch: "product.Quantity" , typeFilter: TypeFilter.Number, module: ModuleName.Product, headerSearch: 'module.inventory.quantity'},
+  ),
+  new Header(
     "warrantyPeriod",
     "product.WarrantyPeriod",
     'module.inventory.warrantyPeriod',

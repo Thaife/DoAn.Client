@@ -1,4 +1,4 @@
-import { ActionTable, InfoTable, ModuleName } from '@/core/public_api';
+import { ActionTable, InfoTable, ModuleName, Employee, StorageService, EntitySystem } from '@/core/public_api';
 import BaseStore from '../base_store';
 import { order } from './column-module/index'
 
@@ -18,13 +18,15 @@ let actions: any = {
 	
 };
 
+const user:Employee = JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser));
+
 /**
  * Các action thao tác với table
  * TVTHAI - 08.03.2023
  */
 const actionTable: InfoTable = {
   actionDefault: ActionTable.ViewDetail,
-	actionList: [ActionTable.WaitConfirm, ActionTable.Confirm, ActionTable.Delivery, ActionTable.Delivered, ActionTable.Destroy, ActionTable.Delete],
+	actionList: user && user.roleType == 1 ? [ActionTable.WaitConfirm, ActionTable.Confirm, ActionTable.Delivery, ActionTable.Delivered, ActionTable.Destroy, ActionTable.Delete] : [ActionTable.WaitConfirm, ActionTable.Confirm, ActionTable.Delivery, ActionTable.Delivered, ActionTable.Destroy],
 	fieldId: "orderID",
 	fieldCode: "userName",
 	fieldActive: "isActive",

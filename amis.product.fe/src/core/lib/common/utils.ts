@@ -350,7 +350,8 @@ export class Utils extends UtilsComponents{
    * TVTHAI - 08.03.2023
    */
   public downloadFromUrl = (url: any) => {
-    window.open(url,);
+    // window.open(url,);
+    window.location.href = url;
   }
 
   /**

@@ -6,6 +6,13 @@ import { ModuleName, TypeFilter, TypeSearch, Header, ComparisonType, IdbDataTabl
  */
 let columns: Header [] = [
   new Header(
+    "orderID",
+    "order.OrderID",
+    'module.order.orderID',
+    "300",
+    { typeSearch: TypeSearch.Text, columnSearch: "order.OrderID" , typeFilter: TypeFilter.Text, module: ModuleName.Cart, headerSearch: 'module.order.orderID'}
+  ),
+  new Header(
     "userName",
     "order.UserName",
     'module.order.userName',

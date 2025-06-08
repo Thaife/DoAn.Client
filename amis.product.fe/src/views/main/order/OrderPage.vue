@@ -17,7 +17,7 @@
             <div class="list_action-item" @click="handleChangeStatus('deliveryOrder')">{{ $t('common.deliveryOrder') }}</div>
             <div class="list_action-item" @click="handleChangeStatus('delivered')">{{ $t('common.delivered') }}</div>
             <div class="list_action-item" @click="handleChangeStatus('destroy')">{{ $t('common.destroy') }}</div>
-            <div class="list_action-item" @click="handleQuestionDeleteAll()">{{ $t('common.delete') }}</div>
+            <div v-if="employee.roleType == 1" class="list_action-item" @click="handleQuestionDeleteAll()">{{ $t('common.delete') }}</div>
           </div>
         </button>
         <base-form-key-search :loadData="Base.loadData" :moduleFilter="ModuleName.Cart"></base-form-key-search>
@@ -28,7 +28,7 @@
           <div class="icon-search"></div>
         </div>
         <div @click="Base.loadData()" class="action-render_table reload-table" :content="$t('common.load_data')"></div>
-        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')"></div>
+        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')" v-if="employee.roleType == 1"></div>
         <div @click="Base.handleShowSettingTable()" class="action-render_table setting-table" :content="$t('common.customize_interface')"></div>
       </div>
     </div>
@@ -45,8 +45,8 @@
 </template>
 
 <script setup lang="ts">
-import { Grid, ModuleName, ActionTable, ENotificationType } from '@/core/public_api';
-import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent } from 'vue';
+import { Grid, ModuleName, ActionTable, ENotificationType, StorageService, Employee, EntitySystem } from '@/core/public_api';
+import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import CartApi from '@/api/module/cart';
 const ViewOrder = defineAsyncComponent(() => import('./ViewOrder.vue'));
@@ -57,6 +57,8 @@ const { t } = useI18n();
  * TVTHAI 13-03-2023
  */
 const api:CartApi = new CartApi();
+
+const employee = ref<Employee>(JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser)));
 
 /** Sử dụng base thư viện Grid đã viết */
 const Base:Grid = reactive(new Grid(ModuleName.Cart, api));

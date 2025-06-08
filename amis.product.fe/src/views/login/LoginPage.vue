@@ -121,6 +121,7 @@ function validateInput() {
 	height: 100vh;
 	width: 100%;
 	background: url('../../assets/css/image/bg2.jpg') center no-repeat;
+	background-size: cover;
 }
 .container-login{
 	position: relative;

@@ -9,7 +9,7 @@
 				</router-link>
       </div>
       <div class="action-table">
-        <div class="btn-add">
+        <div class="btn-add" v-if="employee.roleType == 1">
 					<button @click="Base.openModal(ActionTable.Add)" title="Ctrl + 1" class="add">{{ $t('common.add') }}</button>
 					<button class="import toggle-list">
             <i class="icon"></i>
@@ -31,7 +31,7 @@
       </div>
       <div style="min-width: 350px;" class="table-function_search">
         <div @click="Base.loadData()" class="action-render_table reload-table" :content="$t('common.load_data')"></div>
-        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')"></div>
+        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')" v-if="employee.roleType == 1"></div>
         <div @click="Base.handleShowSettingTable()" class="action-render_table setting-table" :content="$t('common.customize_interface')"></div>
       </div>
     </div>
@@ -56,8 +56,8 @@
 </template>
 
 <script setup lang="ts">
-import { Grid, ModuleName, ActionTable } from '@/core/public_api';
-import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent } from 'vue';
+import { Grid, ModuleName, ActionTable, StorageService, EntitySystem, Employee } from '@/core/public_api';
+import { reactive, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { environment } from '@/environments/environment.prod';
 import BranchApi from '@/api/module/branch';
@@ -71,7 +71,11 @@ const { t } = useI18n();
 const api:BranchApi = new BranchApi();
 
 /** Sử dụng base thư viện Grid đã viết */
-const Base:Grid = reactive(new Grid(ModuleName.Branch, api));
+const _grid:Grid = new Grid(ModuleName.Branch, api);
+_grid.hideAction = true;
+const Base:Grid = reactive(_grid);
+
+const employee = ref<Employee>(JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser)));
 
 /**
  * Trước khi mounted sẽ load dữ liệu 1 lần
@@ -88,6 +92,9 @@ onBeforeMount(() => {
  */
 function handleClickActionColumTable(action: any, recordId: any, recordCode: any) {
 	try {
+    if(employee.value.roleType != 1) {
+      return;
+    }
 		if (action == ActionTable.Edit || action ==  ActionTable.Replication) {
 			Base.openModal(action, recordId);
 		} else if (action == ActionTable.Delete) {

@@ -16,6 +16,8 @@ export class Grid extends Utils{
   /** Key word tìm kiếm mặc định */
   public keyword:string = '';
 
+  public hideAction:boolean = false;
+
   constructor(module: string, api: BaseApi){
     super(module);
     this.api = api;

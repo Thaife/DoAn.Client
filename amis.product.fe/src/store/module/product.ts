@@ -24,7 +24,7 @@ let actions: any = {
  */
 const actionTable: InfoTable = {
   actionDefault: ActionTable.Edit,
-	actionList: [ActionTable.Replication, ActionTable.Delete, ActionTable.StopUsing],
+	actionList: [ActionTable.Replication, ActionTable.Delete],
 	fieldId: "productID",
 	fieldCode: "productCode",
 	fieldActive: "isActive",

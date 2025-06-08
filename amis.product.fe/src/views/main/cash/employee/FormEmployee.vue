@@ -7,7 +7,7 @@
           : Base.StateForm === ActionTable.Replication ? $t('common.replication_record', {module: $t(`module.cash.${ModuleName.Employee}_small`) }) 
           : $t('common.edit_record', {module: $t(`module.cash.${ModuleName.Employee}_small`) }) }}</h2>
           <div class="form-header_checkbox">
-            <div class="check form-checkbox_item">
+            <!-- <div class="check form-checkbox_item">
               <base-checkbox
                 :true-value="true"
                 :false-value="false"
@@ -23,6 +23,15 @@
                 v-model="employee.isVendor"
               >
                 <div class="info-checkbox">{{ $t('module.cash.isVendor') }}</div>
+              </base-checkbox>
+            </div> -->
+            <div class="check form-checkbox_item">
+              <base-checkbox
+                :true-value="1"
+                :false-value="0"
+                v-model="employee.roleType"
+              >
+                <div class="info-checkbox">Là quản trị</div>
               </base-checkbox>
             </div>
           </div>

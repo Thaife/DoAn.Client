@@ -9,8 +9,8 @@
 				</router-link>
       </div>
       <div class="action-table">
-        <div class="btn-add">
-					<button @click="customHandleOpenModal(ActionTable.Add)" title="Ctrl + 1" class="add">{{ $t('common.add') }}</button>
+        <div class="btn-add" v-if="employee.roleType == 1">
+					<button @click="customHandleOpenModal(ActionTable.Add)" title="Ctrl + 1" class="add" >{{ $t('common.add') }}</button>
 					<button class="import toggle-list">
             <i class="icon"></i>
             <div class="table-list_action">
@@ -22,8 +22,8 @@
       </div>
     </div>
     <div class="table-function sticky">
-      <div class="form-fix">
-        <button class="table-function_series toggle-list">
+      <div class="form-fix" >
+        <button class="table-function_series toggle-list" v-if="employee.roleType == 1">
           <span>{{ $t('common.batch_execution') }}</span>
           <div class="table-function_series-icon"></div>
           <div v-show="Base.checkShowActionSeries.length > 0" class="table-list_action">
@@ -38,7 +38,7 @@
           <div class="icon-search"></div>
         </div>
         <div @click="Base.loadData()" class="action-render_table reload-table" :content="$t('common.load_data')"></div>
-        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')"></div>
+        <div @click="Base.exportToExcel()" class="action-render_table export-data" :content="$t('common.export_excel')" v-if="employee.roleType == 1"></div>
         <div @click="Base.handleShowSettingTable()" class="action-render_table setting-table" :content="$t('common.customize_interface')"></div>
       </div>
     </div>
@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { Grid, ModuleName, ActionTable } from '@/core/public_api';
+import { Grid, ModuleName, ActionTable, StorageService, EntitySystem, Employee } from '@/core/public_api';
 import { reactive , ref, onBeforeMount, onUnmounted, onMounted, defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { environment } from '@/environments/environment.prod';
@@ -77,7 +77,13 @@ const { t } = useI18n();
 const api:EmployeeApi = new EmployeeApi();
 
 /** Sử dụng base thư viện Grid đã viết */
-const Base:Grid = reactive(new Grid(ModuleName.Employee, api));
+
+/** Sử dụng base thư viện Grid đã viết */
+const _grid:Grid = new Grid(ModuleName.Employee, api);
+_grid.hideAction = true;
+const Base:Grid = reactive(_grid);
+
+const employee = ref<Employee>(JSON.parse(StorageService.getItemWithSystemConstants(EntitySystem.CurrentUser)));
 
 /** Dữ liệu dropdown đơn vị */
 const optionBranch: any = ref([]);
@@ -120,6 +126,9 @@ async function customHandleOpenModal(action: any, recordId: any = undefined){
  */
 function handleClickActionColumTable(action: any, recordId: any, recordCode: any) {
 	try {
+    if(employee.value.roleType != 1) {
+      return;
+    }
 		if (action == ActionTable.Edit || action ==  ActionTable.Replication) {
 			Base.openModal(action, recordId);
 		} else if (action == ActionTable.Delete) {

@@ -17,7 +17,7 @@
     "deposits": "Danh mục",
     "purchase": "Xuất xứ",
     "sell": "Thương hiệu",
-    "manage_invoices": "Quản lý hoá đơn",
+    "manage_invoices": "Quản lý đơn hàng",
     "tools": "Công cụ dụng cụ",
     "fixed_assets": "Tài sản cố định",
     "salary": "Tiền lương",
@@ -148,6 +148,7 @@
   },
   "module": {
     "order": {
+      "orderID": "ID đơn hàng",
       "userName": "Tên khách hàng",
       "phoneNumber": "Số điện thoại",
       "email": "Địa chỉ email",
@@ -270,6 +271,8 @@
       "minimumStock": "Số lượng tồn tối thiểu",
       "depreciatedTax": "Giảm thuế",
       "warrantyPeriod": "Thời hạn bảo hành",
+      "purchasePrice": "Giá nhập",
+      "quantity": "Số lượng",
       "origin": "Nguồn gốc",
       "description": "Mô tả",
       "explanationBuy": "Diễn giải khi mua",
@@ -303,6 +306,7 @@
       "productCode": "Mã sản phẩm",
       "productName": "Tên sản phẩm",
       "price": "Giá thành",
+      "priceDetail": "Giá bán",
       "category": "Danh mục",
       "product": "Sản phẩm",
       "gender": "Giới tính",

@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="form-item_input">
-							<div class="form-group ms-small-s">
+							<div class="form-group ms-small">
 								<base-input
 									:required="true"
 									:type="'text'"
@@ -91,7 +91,7 @@
                   :handleAddIcon="BaseOrigin.openModal"
 								></base-combobox>
 							</div>
-							<div class="form-group ms-big">
+							<div class="form-group ms-small-s">
 								<base-combobox
                   :widthLabelCode="'170px'"
                   :widthOptionSelect="'450px'"
@@ -109,6 +109,14 @@
                   :handleAddIcon="BaseTrademark.openModal"
 								></base-combobox>
 							</div>
+              <div class="form-group ms-small-s">
+              <base-input
+                :type="'text'"
+                :label="$t('module.inventory.quantity')"
+                :isNumber="true"
+                v-model.number="product.quantity"
+              ></base-input>
+            </div>
 						</div>
 					</div>
 					<base-image v-model="product.avatar"></base-image>
@@ -139,22 +147,22 @@
           <div class="form-group ms-small-s">
             <base-input
               :type="'text'"
-              :label="$t('module.inventory.price')"
+              :label="$t('module.inventory.purchasePrice')"
               :isNumber="true"
-              v-model.number="product.price"
+              v-model.number="product.purchasePrice"
             ></base-input>
           </div>
           <div class="form-group ms-big ">
             <base-input
               :type="'text'"
-              :label="$t('module.inventory.batteryLife')"
-              :maxLength="255"
-              v-model="product.batteryLife"
+              :label="$t('module.inventory.priceDetail')"
+              :isNumber="true"
+              v-model.number="product.price"
             ></base-input>
           </div>
         </div>
         <div class="form-item_input">
-          <div class="form-group">
+          <div class="form-group ms-small-s">
             <base-combobox
               :widthLabelCode="'170px'"
               :widthOptionSelect="'450px'"
@@ -172,7 +180,15 @@
               :handleAddIcon="BaseDepot.openModal"
             ></base-combobox>
           </div>
-          <div class="form-group">
+          <div class="form-group ms-small-s">
+            <base-input
+              :type="'text'"
+              :label="$t('module.inventory.batteryLife')"
+              :maxLength="255"
+              v-model="product.batteryLife"
+            ></base-input>
+          </div>
+          <div class="form-group ms-big">
             <base-input
               :type="'text'"
               :maxLength="255"
