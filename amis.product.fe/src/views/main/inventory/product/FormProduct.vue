@@ -113,6 +113,7 @@
               <base-input
                 :type="'text'"
                 :label="$t('module.inventory.quantity')"
+                :disabled="true"
                 :isNumber="true"
                 v-model.number="product.quantity"
               ></base-input>

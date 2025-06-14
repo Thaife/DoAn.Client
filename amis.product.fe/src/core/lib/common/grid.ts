@@ -62,6 +62,13 @@ export class Grid extends Utils{
     })
   });
 
+  public approve = async (recordId: any) => {
+    await this.apiService.callApi(this.api.approve, {recordId}, (response: any) => { 
+      this.addNotification(ENotificationType.Success, 'Duyệt phiếu thành công!');
+      this.loadData();
+    })
+  }
+
   /**
    * Các Method
    */

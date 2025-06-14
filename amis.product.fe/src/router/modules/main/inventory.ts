@@ -22,6 +22,15 @@ const router: any = [
      * Trang kho
      * TVTHAI - 08.03.2023
      * */
+    path: '/inventory/inward',
+    component: () => import('../../../views/main/inventory/inward/InwardList.vue'),
+    meta: { title: 'page.depot' }
+  },
+  {
+    /** 
+     * Trang kho
+     * TVTHAI - 08.03.2023
+     * */
     path: '/inventory/product',
     component: () => import('../../../views/main/inventory/product/ProductPage.vue'),
     meta: { title: 'page.product' }

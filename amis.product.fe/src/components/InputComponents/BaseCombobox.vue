@@ -453,6 +453,7 @@ export default defineComponent({
               }
             }
             context.emit("update:modelValue", data);
+            context.emit("handleClickData", valueOf);
           }
         }
       else{
@@ -468,7 +469,7 @@ export default defineComponent({
      * TVTHAI - 15.09.2022
      */
     function handleBlur(){
-      handleSaveData(valueClick.value);
+      // handleSaveData(valueClick.value);
     }
 
     /**
@@ -576,6 +577,8 @@ export default defineComponent({
      */
     function handleClickOpenCombobox() {
       try {
+        if(props.disabled)
+          return;
         if (!isShow.value) {
           setPositionListSelect();
         }
@@ -622,6 +625,8 @@ export default defineComponent({
      * TVTHAI - 15.09.2022
      */
     function toggleListSelect() {
+      if(props.disabled)
+        return;
       isShow.value = !isShow.value;
       if (!noAnimation.value) {
         setTimeout(() => {

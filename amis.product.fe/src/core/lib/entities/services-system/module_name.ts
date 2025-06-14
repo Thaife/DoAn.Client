@@ -9,6 +9,7 @@ export class ModuleName {
 
   /** Inventory */
   public static Depot: string = 'depot';
+  public static Inward: string = 'inward';
   public static Category: string = 'category';
   public static Origin: string = 'origin';
   public static Product: string = 'product';

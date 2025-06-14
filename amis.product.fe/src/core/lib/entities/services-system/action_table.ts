@@ -23,6 +23,8 @@ export class ActionTable {
   /** Sử dụng */
   public static use: string = 'use';
 
+  public static Approve: string = 'approve';
+
   /** Cập nhật trạng thái đơn hàng */
   public static ViewDetail: string = 'viewDetail';
   public static WaitConfirm: string = 'waitConfirm';
@@ -274,6 +276,8 @@ export class TypeFormat {
 
   /** Cố định cột đầu tiên không */
   public FixFirstColumn?: boolean = false;
+
+  public Input?: boolean = false;
 }
 
 /**

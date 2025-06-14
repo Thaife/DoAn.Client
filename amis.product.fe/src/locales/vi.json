@@ -25,6 +25,7 @@
     "price": "Giá thành",
     "branch": "Đơn vị",
     "depot": "Nhà kho",
+    "inward": "Nhập kho",
     "unitCalculation": "Đơn vị tính",
     "commodityGroup": "Nhóm vật tư, hàng hoá, dịch vụ",
     "construction_page": "Tính năng được xây dựng",
@@ -50,6 +51,7 @@
     "stopUsing": "Ngừng sử dụng",
     "using": "đang sử dụng",
     "search": "Tìm kiếm",
+    "approve": "Duyệt",
     "add": "Thêm",
     "edit": "Sửa",
     "delete": "Xoá",
@@ -147,6 +149,18 @@
     "depreciatedTaxStatus": "Trạng thái tra cứu giảm thuế theo nghị quyết 43/2022/QH15"
   },
   "module": {
+    "inward": {
+      "inwardName": "Tên phiếu nhập",
+      "description": "Diễn giải",
+      "depotName": "Kho nhập",
+      "CreatedBy": "Người tạo",
+      "CreatedDate": "Ngày nhập",
+      "productCode": "Mã sản phẩm",
+      "productName": "Tên sản phẩm",
+      "quantity": "Số lượng nhập",
+      "price": "Đơn giá nhập",
+      "isApprove": "Trạng thái phê duyệt"
+    },
     "order": {
       "orderID": "ID đơn hàng",
       "userName": "Tên khách hàng",
@@ -237,6 +251,7 @@
       "tool_tools_info": "Công cụ dụng cụ mua về nhập kho chưa đưa vào sử dụng",
       "change_nature": "Thay đổi tính chất",
       "select_nature": "Chọn tính chất hàng hóa dịch vụ",
+      "inward":"Phiếu nhập",
       "depot": "Kho",
       "depot_small": "kho",
       "inventory_item": "Vật tư hàng hoá",

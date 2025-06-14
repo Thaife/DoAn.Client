@@ -101,6 +101,17 @@ export default class BaseStore {
          * TVTHAI - 08.03.2023
          */
         setRecordListMutation: (state: any, payload: any) => {
+          if(payload.recordList.length > 0 && payload.recordList[0].inwardID) {
+            payload.recordList.forEach((element: any) => {
+              const date = new Date(element.createdDate);
+              const day = String(date.getDate()).padStart(2, '0');
+              const month = String(date.getMonth() + 1).padStart(2, '0'); // Tháng tính từ 0
+              const year = date.getFullYear();
+
+              const formatted = `${day}/${month}/${year}`;
+              element.createdDate = formatted
+            });
+          }
           state.recordList = [...payload.recordList];
           state.totalCount = payload.totalCount;
           if(this.SetRecordList) {

@@ -59,7 +59,7 @@
               :style="{ 'left': `${BaseComponent.columnFix[index] ? `${BaseComponent.columnFix[index].Width}px` : ''}`, 'position': `${BaseComponent.columnFix[index] ? `sticky` : 'unset'}`}" 
               :class="`${BaseComponent.columnFix[index] ? `z3`: ``} ${index === columnCustom.length - 1 ? 'header-content-end':''} ${col.TypeFormat.TextAlign} ${row[col.Field] === 'common.valid' ? 'common-valid' : row[col.Field] === 'common.illegal' ? 'common-illegal' : ''} ${col.TypeFormat.FixFirstColumn === true ? 'column-sticky': ''}`"
                 :key="index" @dblclick=" handleClickActionColumTable(BaseComponent.actionTable.actionDefault, row[BaseComponent.actionTable.fieldId])">
-                <span class="data-table-bind" :class="`${BaseComponent.lineClamp}`">
+                <span v-if="col.TypeFormat.Input != true" class="data-table-bind" :class="`${BaseComponent.lineClamp}`">
                   <span v-if="row[BaseComponent.actionTable.fieldCode] === row[col.Field] && row.bindHTMLChild" v-html="row.bindHTMLChild + row.bindHTMLChild"></span>
                   {{ formatData(col.TypeFormat, row[col.Field]) }}
                   <span v-if="col.TypeFormat.HTML === true" v-html="row[col.Field]" class="data-table-bind" :class="`${BaseComponent.lineClamp}`"></span>
@@ -70,10 +70,22 @@
                 <div v-if="col.TypeFormat.CheckBox === true" class="checkBox">
                   <base-checkbox :checked="row[col.Field]" :lockCheckBox="col.TypeFormat.LockCheckBox"> </base-checkbox>
                 </div>
+                <div v-if="col.TypeFormat.Input === true" class="td-input">
+                  <base-input
+                    :required="false"
+                    :type="'text'"
+                    :disabled="disabled"
+                    :isNumber="true"
+                    :maxLength="200"
+                    v-model="row[col.Field]"
+                    ref="inputFocus"
+                  ></base-input>
+              
+                </div>
               </td>
               <!-- Phần render các chức năng tác vụ -->
               <td v-if="BaseComponent.hideAction !== true" class="text-center fix column-end">
-                <div class="action-colum_table">
+                <div class="action-colum_table" v-if="handleShowActionCol(row)">
                   <button @click=" handleCloseAction(); handleClickActionColumTable(BaseComponent.actionTable.actionDefault, row[BaseComponent.actionTable.fieldId]);"
                     class="action-table action-table_left" >
                     <div class="action-default">
@@ -114,6 +126,7 @@
               :row="rowColumn"
               :handleCloseAction="handleCloseAction"
               :handleClickActionColumTable="handleClickActionColumTable"
+              :handleShowActionList="handleShowActionList"
             ></base-table-list-action>
             <base-table-filter :handleFixColumn="BaseComponent.handleFixColumn" :oldSearch="oldSearch" :handleShowFilter="handleShowFilter" :dataFilter="dataFilter" @handle-filter-data="handleFilterData" :setPositionFilter="setPositionFilter" v-if="isShowFilter">
             </base-table-filter>
@@ -178,6 +191,9 @@ export default defineComponent({
       type: Object as PropType<any>,
       default: (): any  => {}
     },
+    disabled: {
+
+    },
     /**
      * sự kiện click các action table
      */
@@ -185,6 +201,14 @@ export default defineComponent({
       type: Function,
       default: ()=> {}
     },
+    handleShowActionList: {
+      type: Function,
+      default: ()=> {return true}
+    },
+    handleShowActionCol: {
+      type: Function,
+      default: ()=> {return true}
+    }
   },
   setup(props) {
     const Base: UtilsComponents = new UtilsComponents();
@@ -871,6 +895,9 @@ thead .column-end{
 }
 .header-content-end{
   border-right: unset !important;
+}
+.form_depot_in .z3 {
+  z-index: 1 !important;
 }
 thead .z3{
   z-index: 5 !important;

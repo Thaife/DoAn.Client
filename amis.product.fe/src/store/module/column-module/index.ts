@@ -1,6 +1,7 @@
 import branch from "./branch";
 import employee from "./employee";
 import depot from "./depot";
+import inward from "./inward";
 import category from "./category";
 import product from "./product";
 import origin from "./origin";
@@ -9,5 +10,5 @@ import order from "./order";
 import coupon from "./coupon";
 
 export {
-  branch, employee, depot, category, product, origin, trademark, order, coupon
+  branch, employee, depot, category, product, origin, trademark, order, coupon, inward
 }

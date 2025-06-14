@@ -32,6 +32,10 @@ export default class BaseApi{
     return axiosAPI.post(`/${this.Module}/fitter`, filter);
   }
 
+  public approve = (payload: any) => {
+    return axiosAPI.get(`/${this.Module}/approve/${payload.recordId}`, );
+  }
+
   /**
    * API lấy tất cả danh sách bản ghi tìm kiếm và phân trang
    * @returns Danh sách bản ghi và tổng số lượng

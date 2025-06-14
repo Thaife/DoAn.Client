@@ -12,6 +12,7 @@
       v-for="(actionItem, index) in actionTable.actionList"
       :key="index"
       class="list_action-item"
+      v-show="handleShowActionList(actionItem, row)"
       @click="
         handleCloseAction();
         handleClickActionColumTable(
@@ -50,6 +51,10 @@ export default defineComponent({
     handleClickActionColumTable: {
       type: Function,
       default: ()=> {}
+    },
+    handleShowActionList: {
+      type: Function,
+      default: ()=> {return true}
     },
     /**
      * Hàm đóng action

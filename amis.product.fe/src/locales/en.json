@@ -25,6 +25,7 @@
     "price": "Price",
     "branch": "Branch",
     "depot": "Depot",
+    "inward": "Inward",
     "unitCalculation": "Unit calculation",
     "commodityGroup": "Group of materials, goods and services",
     "construction_page": "Feature built",

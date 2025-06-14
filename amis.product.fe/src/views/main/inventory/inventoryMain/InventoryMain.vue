@@ -16,6 +16,12 @@
 								{{ $t('module.inventory.depot') }}
               </div>
             </router-link>
+			<router-link to="/inventory/inward" class="footer-page_item">
+              <div class="footer-page_icon" style="background-position: -1264px -200px;"></div>
+              <div class="footer-page_text">
+								Nhập kho
+              </div>
+            </router-link>
             <router-link to="/inventory/product" class="footer-page_item">
               <div class="footer-page_icon" style="background-position: -1152px -200px;"></div>
               <div class="footer-page_text">

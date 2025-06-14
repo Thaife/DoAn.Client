@@ -3,6 +3,7 @@ import config from './module/config';
 import employee from './module/employee';
 import branch from './module/branch';
 import depot from './module/depot';
+import inward from './module/inward';
 import origin from './module/origin';
 import trademark from './module/trademark';
 import product from './module/product';
@@ -16,6 +17,7 @@ const store = createStore({
     employee,
     branch,
     depot,
+    inward,
     origin,
     trademark,
     product,

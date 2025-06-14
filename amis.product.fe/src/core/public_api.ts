@@ -31,6 +31,7 @@ export * from './lib/entities/cash/branch';
 
 // Inventory
 export * from './lib/entities/inventory/depot';
+export * from './lib/entities/inventory/inward';
 export * from './lib/entities/inventory/product';
 export * from './lib/entities/inventory/category';
 export * from './lib/entities/inventory/origin';
